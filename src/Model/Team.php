@@ -21,7 +21,6 @@ class Team
      * @var \Player[] $players
      */
     private $players;
-
     /**
      * Team constructor.
      * @param int $id
@@ -83,7 +82,7 @@ class Team
         $this->players = $players;
     }
 
-    
+
 
 
 }
