@@ -24,6 +24,6 @@ class UserRepesitory extends Repository {
            array_push($users,$this->convertToModel($result));
         }
 
-        return
+        return;
     }
 }

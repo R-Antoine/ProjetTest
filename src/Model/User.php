@@ -1,6 +1,7 @@
 <?php
 
-class User {
+class User
+{
     /** @var int $id */
     private $id;
     /** @var string $fisrtname */
@@ -12,12 +13,11 @@ class User {
     /** @var DateTime $createdAt */
     private $createdAt;
 
-    
 
     /**
      * Get the value of fisrtname
-     */ 
-    public function getFisrtname():string
+     */
+    public function getFisrtname(): string
     {
         return $this->fisrtname;
     }
@@ -26,8 +26,8 @@ class User {
      * Set the value of fisrtname
      *
      * @return  self
-     */ 
-    public function setFisrtname(string $fisrtname):self
+     */
+    public function setFisrtname(string $fisrtname): self
     {
         $this->fisrtname = $fisrtname;
 
@@ -36,8 +36,8 @@ class User {
 
     /**
      * Get the value of lastname
-     */ 
-    public function getLastname():string
+     */
+    public function getLastname(): string
     {
         return $this->lastname;
     }
@@ -46,8 +46,8 @@ class User {
      * Set the value of lastname
      *
      * @return  self
-     */ 
-    public function setLastname(string $lastname):self
+     */
+    public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
 
@@ -56,8 +56,8 @@ class User {
 
     /**
      * Get the value of age
-     */ 
-    public function getAge():int
+     */
+    public function getAge(): int
     {
         return $this->age;
     }
@@ -66,8 +66,8 @@ class User {
      * Set the value of age
      *
      * @return  self
-     */ 
-    public function setAge(int $age):self
+     */
+    public function setAge(int $age): self
     {
         $this->age = $age;
 
@@ -76,8 +76,8 @@ class User {
 
     /**
      * Get the value of createdAt
-     */ 
-    public function getCreatedAt():DateTime
+     */
+    public function getCreatedAt(): DateTime
     {
         return $this->createdAt;
     }
@@ -86,8 +86,8 @@ class User {
      * Set the value of createdAt
      *
      * @return  self
-     */ 
-    public function setCreatedAt(DateTime $createdAt):self
+     */
+    public function setCreatedAt(DateTime $createdAt): self
     {
         $this->createdAt = $createdAt;
 
@@ -96,7 +96,7 @@ class User {
 
     /**
      * Get the value of id
-     */ 
+     */
     public function getId(): int
     {
         return $this->id;
@@ -106,22 +106,11 @@ class User {
      * Set the value of id
      *
      * @return  self
-     */ 
-    public function setId(int $id):User
+     */
+    public function setId(int $id): User
     {
         $this->id = $id;
 
         return $this;
-    }
-    
-    $db->query('CREATE TABLE IF NOT EXISTS
-    'revision'($user_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255),
-    age INT,
-    created_at DATETIME)');
-
-    if ($db->errno) {
-        throw new Exception($db->error);
     }
 }
