@@ -18,6 +18,7 @@ $db = new mysqli(
     getenv('DB_PORT')
 );
 
+<<<<<<< HEAD
 $db->query(
     'CREATE TABLE IF NOT EXISTS team('+
     'id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,'+
@@ -38,6 +39,10 @@ $db->query(
     'name VARCHAR(32) NOT NULL'+
     ');'
 );
+=======
+$db->query('CREATE TABLE IF NOT EXISTS player(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, firstname VARCHAR(255), lastname VARCHAR(255)) ');
+$db->query('CREATE TABLE IF NOT EXISTS team(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, name VARCHAR(255))');
+>>>>>>> 7f5f670dbcdc56ce5f38068631daa9a044a52c3b
 
 if (!$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
     || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jawad','cafe')")

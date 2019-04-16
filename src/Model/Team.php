@@ -21,18 +21,6 @@ class Team
      * @var \Player[] $players
      */
     private $players;
-    /**
-     * Team constructor.
-     * @param int $id
-     * @param string $name
-     * @param \Player[] $players
-     */
-    public function __construct(int $id, string $name, array $players)
-    {
-        $this->id = $id;
-        $this->name = $name;
-        $this->players = $players;
-    }
 
     /**
      * @return int
