@@ -46,11 +46,11 @@ class TeamRepository extends Repository implements IRepository
                 $team = new Team();
                 $team->setName($result['name']);
                 $team->setPlayers($result['team']);
-                $users[] = $team;
+                $teams[] = $team;
             }
         }
 
-        return $users;
+        return $teams;
     }
 
     public function insert($team)
@@ -58,7 +58,7 @@ class TeamRepository extends Repository implements IRepository
         if (!$team instanceof Team) {
             throw new \Exception('You can save only team');
         }
-        $request = "(name, team) VALUES ('" . $team->getName() . "','" . $team->getPlayers() . "')";
+        $request = "(name) VALUES ('" . $team->getName() . "')";
         return parent::insert($request);
     }
 

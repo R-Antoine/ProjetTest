@@ -38,9 +38,7 @@ class TeamController
             if (isset($_POST['name']) && !empty($_POST['name'])) {
                 $team = new Team();
                 $team->setName($_POST['name']);
-
-                $this->userRepository->insert($team);
-
+                $this->teamRepository->insert($team);
                 exit;
             } else {
                 $errors[] = 'Missing fields';
