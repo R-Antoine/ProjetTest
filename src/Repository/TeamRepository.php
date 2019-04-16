@@ -45,7 +45,6 @@ class TeamRepository extends Repository implements IRepository
             foreach ($results as $result) {
                 $team = new Team();
                 $team->setName($result['name']);
-                $team->setPlayers($result['team']);
                 $teams[] = $team;
             }
         }

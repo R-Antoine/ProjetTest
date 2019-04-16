@@ -28,6 +28,7 @@ class TeamController
 
     public function index()
     {
+        $teams = $this->teamRepository->getResults();
         require_once 'src/View/team/index.php';
     }
 

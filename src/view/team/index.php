@@ -15,5 +15,15 @@
         </div>
     </div>
 </div>
+<ul>
+    <?php
+    /** @var \App\Model\Team[] $teams */
+
+    foreach ($teams as $team) : ?>
+        <li>
+            <?php echo $team->getName(); ?>
+        </li>
+    <?php endforeach; ?>
+</ul>
 </body>
 </html>
