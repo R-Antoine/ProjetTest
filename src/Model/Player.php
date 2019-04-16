@@ -1,6 +1,6 @@
 <?php
 
-class User
+class Player
 {
     /** @var int $id */
     private $id;
