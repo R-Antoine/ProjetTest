@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col text-center">
-           <a href="../team/index.php">Créer un tournoi</a>
+           <a href="/team/index">Créer un tournoi</a>
         </div>
     </div>
 </div>

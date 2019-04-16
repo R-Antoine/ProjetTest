@@ -19,6 +19,7 @@ $db = new mysqli(
 );
 
 $db->query('CREATE TABLE IF NOT EXISTS player(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, firstname VARCHAR(255), lastname VARCHAR(255)) ');
+$db->query('CREATE TABLE IF NOT EXISTS team(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, name VARCHAR(255), lastname VARCHAR(255)) ');
 
 if (!$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
     || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jawad','cafe')")

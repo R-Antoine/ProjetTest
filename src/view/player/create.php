@@ -15,7 +15,10 @@
         <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Nom des joueurs</label>
             <div class="col-sm-10">
-                <input type="text" name="namePlayer" class="form-control" id="nameSquad" placeholder="Nom des joueurs">
+                <input type="text" name="firstname" class="form-control" id="nameSquad" placeholder="Prénom">
+            </div>
+            <div class="col-sm-10">
+                <input type="text" name="lastname" class="form-control" id="lastnameSquad" placeholder="Nom">
             </div>
         </div>
         <div class="form-group row">
