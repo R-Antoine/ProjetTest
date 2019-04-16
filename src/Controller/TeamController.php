@@ -39,6 +39,7 @@ class TeamController
                 $team = new Team();
                 $team->setName($_POST['name']);
                 $this->teamRepository->insert($team);
+                header('Location: /team/index');
                 exit;
             } else {
                 $errors[] = 'Missing fields';
