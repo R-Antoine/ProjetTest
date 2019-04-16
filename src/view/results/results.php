@@ -6,7 +6,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-        <h1 class="text-center">Resultats du tournoi :</h1>
+        <h1 class="text-center">Resultats du tournoi <?php echo $_GET["tournament"] ?> :</h1>
         <div class="container">
             <div class="row">
                 <table class="table">
@@ -20,9 +20,9 @@
                     <tbody>
                     <?php for ($tableIndex=0; $tableIndex < 8; $tableIndex++){ ?>
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td><?php echo $tableIndex + 1 ?></td>
+                            <td>je suis un nom</td>
+                            <td>je suis un classement</td>
                         </th>
                     <?php } ?>
                     </tbody>
