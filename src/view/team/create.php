@@ -20,7 +20,7 @@
         </div>
         <div class="form-group row">
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Valider</button>
+            <a class="btn btn-light" href="../player/create.php">Ajouter les joueurs</a>
                 <a class="btn btn-light" href=".">Aller a la liste</a>
             </div>
         </div>

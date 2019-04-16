@@ -12,7 +12,6 @@
     <div class="row">
         <div class="col text-center">
            <a href="create.php">Créer une équipe</a>
-           <a href="">Ajouter des joueurs</a>
         </div>
     </div>
 </div>
