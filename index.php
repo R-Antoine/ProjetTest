@@ -19,9 +19,7 @@ if(isset($_GET['c']) && !empty($_GET['c'])) {
     $controllerName .= 'IndexController';
 }
 
-if (class_exists($controllerName, true)) {
-    var_dump(true);
-}else{
+if (!class_exists($controllerName, true)) {
     echo "404 - Error";
     exit;
 }
