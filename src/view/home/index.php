@@ -11,9 +11,44 @@
 <div class="container">
     <div class="row">
         <div class="col text-center">
-            <button type="button" class="btn btn-success">Créer un tournoi</button>
+           <a href="../team/index.php">Créer un tournoi</a>
         </div>
     </div>
 </div>
+<div class="container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-4">
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">#1 TOURNOIS</h5>
+    <p class="card-text">Fini</p>
+    <a href="#" class="btn btn-primary">Détail</a>
+  </div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">#2 TOURNOIS</h5>
+    <p class="card-text">En cour</p>
+    <a href="#" class="btn btn-primary">Détail</a>
+  </div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">#3 TOURNOIS</h5>
+    <p class="card-text">le 17/04 à 17h30</p>
+    <a href="#" class="btn btn-primary">Détail</a>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
 </body>
 </html>
