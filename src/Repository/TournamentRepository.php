@@ -61,39 +61,9 @@ class TournamentRepository extends Repository implements IRepository
     public function insert($tournament)
     {
         if (!$tournament instanceof Tournament) {
-            throw new \Exception('You can save only users');
+            throw new \Exception('You can save only tournaments');
         }
         $request = "(id) VALUES ('" . $tournament->getId()."')";
         return parent::insert($request);
-    }
-
-    /**
-     * Update user
-     *
-     * @param User $user
-     * @throws \Exception
-     */
-    public function update($user)
-    {
-        if (!$user instanceof Player) {
-            throw new \Exception('You can save only users');
-        }
-        $request = "SET firstname = '" . $user->getFirstName() . "', lastname = '" . $user->getLastName() . "' WHERE id = " . $user->getId() . " ";
-        parent::update($request);
-    }
-
-    /**
-     * Delete user
-     *
-     * @param User $user
-     * @throws \Exception
-     */
-    public function delete($user)
-    {
-        if (!$user instanceof Player) {
-            throw new \Exception('You can save only users');
-        }
-        $request = "WHERE id = " . $user->getId();
-        parent::delete($request);
     }
 }

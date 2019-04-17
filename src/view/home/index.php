@@ -27,24 +27,6 @@
   </div>
 </div>
 </div>
-<div class="col-md-4">
-<div class="card text-center" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">#2 TOURNOIS</h5>
-    <p class="card-text">En cour</p>
-    <a href="#" class="btn btn-primary">Détail</a>
-  </div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card text-center" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">#3 TOURNOIS</h5>
-    <p class="card-text">le 17/04 à 17h30</p>
-    <a href="#" class="btn btn-primary">Détail</a>
-  </div>
-</div>
-</div>
 </div>
 
 </div>

@@ -26,7 +26,7 @@ private $teamRepository;
     }
 
     public function index(){
-        $tournament = $this->tournamentRepository->getResults();
+        $tournaments = $this->tournamentRepository->getResults();
         $teams = $this->tournamentRepository->getResults();
         require_once 'src/View/tournament/index.php';
 
