@@ -48,9 +48,9 @@ class TeamRepository extends Repository implements IRepository
                 $teams[] = $team;
             }
         }
-
         return $teams;
     }
+
 
     public function insert($team)
     {
