@@ -25,6 +25,7 @@
                     <div class="col-sm-10">
                         <select name="team">
                             <?php
+
                             /** @var \App\Model\Team[] $teams */
                             foreach ($teams as $team) : ?>
                                 <option value='<?php echo $team->getId() ?>'>

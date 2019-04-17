@@ -16,7 +16,6 @@ use App\Repository\UserRepository;
 class TeamController
 {
     private $teamRepository;
-    private $userRepository;
 
     /**
      * TeamController constructor.

@@ -45,15 +45,20 @@ class UserController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['firstname']) && !empty($_POST['firstname']) || isset($_POST['lastname']) && !empty($_POST['lastname'])) {
                 $playerTeam = $this->teamRepository->getResult('where id=' . $_POST['team']);
+                $users = $this->userRepository->getResults('where team_id=' . $playerTeam->getId());
+                $playerTeam->setPlayers($users);
                 $user = new Player();
                 $user->setTeam($playerTeam);
                 $user->setFisrtname($_POST['firstname'])
                     ->setLastname($_POST['lastname']);
-
-
-                $this->userRepository->insert($user);
-
-                exit;
+                if(count($playerTeam->getPlayers())<4) {
+                    $this->userRepository->insert($user);
+                    header('Location: /team/index');
+                    exit;
+                }else{
+                    $errors[] = 'ERREUR: Equipe pleine';
+                    echo $errors[0];
+                }
             } else {
                 $errors[] = 'Missing fields';
             }

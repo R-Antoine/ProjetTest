@@ -7,23 +7,12 @@
 
 </head>
 <body>
-<h1 class="text-center">Tournoi de pétanque</h1>
+<h1 class="text-center">Tournois</h1>
 <div class="container">
     <div class="row">
         <div class="col text-center">
-           <a href="/user/create">Ajouter des joueurs</a>
         </div>
     </div>
 </div>
-<ul>
-    <?php
-    /** @var \App\Model\Player[] $players */
-
-    foreach ($users as $player) : ?>
-        <li>
-            <?php echo $player->getFisrtname(); ?>
-        </li>
-    <?php endforeach; ?>
-</ul>
 </body>
 </html>

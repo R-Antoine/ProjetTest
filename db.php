@@ -66,11 +66,7 @@ $db->query(
 );
 echo $db->error;
 //-------------------------------------------------------------------------------------------------
-$db->query(
-    'INSERT INTO team(name) VALUES '.
-    '("Les patates"), ("Jai faim"), ("Les Dozo"), ("S-Crew"),'.
-    '("1995"), ("Universal France"), ("Neocrome"), ("ISSOU");'
-);
+
 
 $db->close();
 

@@ -25,19 +25,6 @@ class Tournament
     private $matches;
 
     /**
-     * Tournament constructor.
-     * @param int $id
-     * @param Team[] $teams
-     * @param Matche[] $matches
-     */
-    public function __construct(int $id, array $teams, array $matches)
-    {
-        $this->id = $id;
-        $this->teams = $teams;
-        $this->matches = $matches;
-    }
-
-    /**
      * @return int
      */
     public function getId(): int

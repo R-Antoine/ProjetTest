@@ -11,88 +11,49 @@
 <div class="container">
     <div class="row">
         <div class="col text-center">
-           <a href="/team/create">Créer une équipe</a>
+            <a href="/team/create">Créer une équipe</a>
         </div>
     </div>
 </div>
-<ul>
+<table class="table" style="text-align:center;">
+
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Team</th>
+        <th scope="col">Nb joueurs</th>
+        <th scope="col">Nom joueurs</th>
+    </tr>
+    </thead>
+    <tbody>
     <?php
     /** @var \App\Model\Team[] $teams */
 
     foreach ($teams as $team) : ?>
-        <li>
-            <?php echo $team->getName(); ?>
-        </li>
+        <tr>
+            <th scope="row"><?php echo $team->getId() ?></th>
+            <td><?php echo $team->getName() ?></td>
+            <td><?php echo sizeof($team->getPlayers()) ?></td>
+            <td><?php foreach ($team->getPlayers() as $user){echo $user->getFisrtname().' | ';}?></td>
+            <td><a href="../../user/create">Ajouter des joueurs</a>
+                <button style="margin-left:20px;" type="button" class="btn btn-success">Modifier</button>
+                <button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button>
+            </td>
+        </tr>
     <?php endforeach; ?>
-</ul>
-<table class="table" style="text-align:center;">
-
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Team</th>
-      <th scope="col">Nb joueurs</th>
-      <th scope="col">Nom joueurs</th>
-    </tr>
-  </thead >
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>3</td>
-      <td>@mdo</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>4</td>
-      <td>@fat</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>2</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Larry</td>
-      <td>2</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Larry</td>
-      <td>4</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">6</th>
-      <td>Larry</td>
-      <td>3</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">7</th>
-      <td>Larry</td>
-      <td>2</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">8</th>
-      <td>Larry</td>
-      <td>3</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-  </tbody>
+    </tbody>
 </table>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <button style="text-align:center; height:70px; width:250px; margin-left:400px; margin-bottom:30px;"
+                        type="button" class="btn btn-success">CREER LE BRACKET MONSTER
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
 </body>
 </html>

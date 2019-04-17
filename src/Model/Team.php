@@ -11,16 +11,16 @@ namespace App\Model;
 
 class Team
 {
-    /**@var int $id **/
+    /**@var int $id * */
     private $id;
     /**
      * @var string $name
      */
     private $name;
     /**
-     * @var \Player[] $players
+     * @var Player[] $players
      */
-    private $players;
+    private $players =[];
 
     /**
      * @return int
@@ -55,7 +55,7 @@ class Team
     }
 
     /**
-     * @return \Player[]
+     * @return Player[]
      */
     public function getPlayers(): array
     {
@@ -63,14 +63,17 @@ class Team
     }
 
     /**
-     * @param \Player[] $players
+     * @param Player[] $players
      */
     public function setPlayers(array $players): void
     {
         $this->players = $players;
     }
 
-
+    public function addPlayerToTeam($player): void
+    {
+        array_push($this->players,$player);
+    }
 
 
 }
