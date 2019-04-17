@@ -49,8 +49,7 @@ class UserController
                 $user->setTeam($playerTeam);
                 $user->setFisrtname($_POST['firstname'])
                     ->setLastname($_POST['lastname']);
-
-
+                $playerTeam->addPlayerToTeam($user);
                 $this->userRepository->insert($user);
 
                 exit;

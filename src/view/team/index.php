@@ -15,16 +15,6 @@
         </div>
     </div>
 </div>
-<ul>
-    <?php
-    /** @var \App\Model\Team[] $teams */
-
-    foreach ($teams as $team) : ?>
-        <li>
-            <?php echo $team->getName(); ?>
-        </li>
-    <?php endforeach; ?>
-</ul>
 <table class="table" style="text-align:center;">
 
   <thead>
@@ -36,62 +26,17 @@
     </tr>
   </thead >
   <tbody>
+  <?php
+  /** @var \App\Model\Team[] $teams */
+
+  foreach ($teams as $team) : ?>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>3</td>
-      <td>@mdo</td>
+      <th scope="row"><?php echo $team->getId()?></th>
+      <td><?php echo $team->getName()?></td>
+      <td><?php echo sizeof($team->getPlayers())?></td>
       <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>4</td>
-      <td>@fat</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>2</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Larry</td>
-      <td>2</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Larry</td>
-      <td>4</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">6</th>
-      <td>Larry</td>
-      <td>3</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">7</th>
-      <td>Larry</td>
-      <td>2</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
-    <tr>
-      <th scope="row">8</th>
-      <td>Larry</td>
-      <td>3</td>
-      <td>@twitter</td>
-      <td><button type="button" class="btn btn-success">Modifier</button><button style="margin-left:20px;" type="button" class="btn btn-danger">Supprimer</button></td>
-    </tr>
+  <?php endforeach; ?>
   </tbody>
 </table>
 </body>

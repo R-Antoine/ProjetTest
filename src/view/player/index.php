@@ -15,5 +15,15 @@
         </div>
     </div>
 </div>
+<ul>
+    <?php
+    /** @var \App\Model\Player[] $players */
+
+    foreach ($users as $player) : ?>
+        <li>
+            <?php echo $player->getFisrtname(); ?>
+        </li>
+    <?php endforeach; ?>
+</ul>
 </body>
 </html>
