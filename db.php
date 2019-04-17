@@ -48,6 +48,23 @@ $db->query(
     'FOREIGN KEY (tournament_id) REFERENCES tournament(id)'.
     ');'
 );
+$db->query(
+    'CREATE TABLE IF NOT EXISTS `match`('.
+    'id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,'.
+    'team_id_1 INT NOT NULL,'.
+    'team_id_2 INT NOT NULL,'.
+    'tournament_id INT NOT NULL,'.
+    'win INT NOT NULL,'.
+    'lose INT NOT NULL,'.
+    'match_order INT NOT NULL,'.
+    'FOREIGN KEY (team_id_1) REFERENCES team(id),'.
+    'FOREIGN KEY (team_id_2) REFERENCES team(id),'.
+    'FOREIGN KEY (tournament_id) REFERENCES tournament(id),'.
+    'FOREIGN KEY (win) REFERENCES team(id),'.
+    'FOREIGN KEY (lose) REFERENCES team(id)'.
+    ');'
+);
+echo $db->error;
 //-------------------------------------------------------------------------------------------------
 $db->query(
     'INSERT INTO team(name) VALUES '.
@@ -55,7 +72,6 @@ $db->query(
     '("1995"), ("Universal France"), ("Neocrome"), ("ISSOU");'
 );
 
-echo $db->error;
 $db->close();
 
 
