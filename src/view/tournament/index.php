@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<div class="header"><h1>FCS Tournament Bracket</h1></div>
+<div class="header"><h1>Tournois de la tricke</h1></div>
 <div class="bracket-container">
   <div class="bracket-level">
     <div class="bracket-matchup"></div>
