@@ -47,14 +47,20 @@ $db->query(
     'FOREIGN KEY (tournament_id) REFERENCES tournament(id)'.
     ');'
 );
+//-------------------------------------------------------------------------------------------------
+$db->query(
+    'INSERT INTO team(name) VALUES '.
+    '("Les patates"), ("Jai faim"), ("Les Dozo"), ("S-Crew"),'.
+    '("1995"), ("Universal France"), ("Neocrome"), ("ISSOU");'
+);
 $db->query(
     'INSERT INTO player(name, team_id) VALUES '.
-    '("Jean", 0), ("Robert", 0), ("Rouquin", 1), ("Guillaume", 1),'.
-    '("Antoine", 2), ("Julian", 2), ("Paul", 3), ("Carine", 3),'.
-    '("Rui", 4), ("Anïs", 4), ("Pierre-alain", 5), ("Amandine", 5),'.
-    '("Alexandra", 6), ("Hinerava", 6), ("Jhonny", 7), ("Koba LaD", 7);'
+    '("Jean", 1), ("Robert", 1), ("Rouquin", 2), ("Guillaume", 2),'.
+    '("Antoine", 3), ("Julian", 3), ("Paul", 4), ("Carine", 4),'.
+    '("Rui", 5), ("Anïs", 5), ("Pierre-alain", 6), ("Amandine", 6),'.
+    '("Alexandra", 7), ("Hinerava", 7), ("Jhonny", 8), ("Koba LaD", 8);'
 );
-
+echo $db->error;
 $db->close();
 
 
