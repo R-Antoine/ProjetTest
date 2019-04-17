@@ -46,10 +46,10 @@
 <div class="container-fluid">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <button style="text-align:center; height:70px; width:250px; margin-left:400px; margin-bottom:30px;"
+            <a class="col-md-12">
+               <a href="/tournament/index" <button style="text-align:center; height:70px; width:250px; margin-left:400px; margin-bottom:30px;"
                         type="button" class="btn btn-success">CREER LE BRACKET MONSTER
-                </button>
+                </button></a>
             </div>
         </div>
 
