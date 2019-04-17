@@ -36,7 +36,6 @@ $db->query(
 $db->query(
     'CREATE TABLE IF NOT EXISTS tournament('.
     'id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,'.
-    'name VARCHAR(32) NOT NULL'.
     ');'
 );
 $db->query(

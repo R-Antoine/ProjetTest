@@ -2,20 +2,22 @@
 /**
  * Created by PhpStorm.
  * User: HB
- * Date: 16/04/2019
- * Time: 14:26
+ * Date: 17/04/2019
+ * Time: 14:16
  */
 
 namespace App\Repository;
 
 
-use App\Model\Bracket;
+use App\Model\Tournament;
 
-class TeamRepository extends Repository implements IRepository
+class TournamentRepository extends Repository implements IRepository
 {
     private static $table = 'tournament';
 
-
+    /**
+     * TournamentRepository constructor.
+     */
     public function __construct()
     {
         parent::__construct(TournamentRepository::$table);
@@ -30,10 +32,8 @@ class TeamRepository extends Repository implements IRepository
         if ($result) {
             $tournament = new Tournament();
             $tournament->setId($result['id']);
-            $tournament->setName($result['name']);
         }
-
-        return $team;
+        return $tournament;
     }
 
 
@@ -46,30 +46,54 @@ class TeamRepository extends Repository implements IRepository
             foreach ($results as $result) {
                 $tournament = new Tournament();
                 $tournament->setId($result['id']);
-                $tournament->setName($result['name']);
                 $tournaments[] = $tournament;
             }
         }
-        return $teams;
+
+        return $tournaments;
     }
 
-
-    public function insert($team)
+    /**
+     * @param Tournament $tournament
+     * @return mixed
+     * @throws \Exception
+     */
+    public function insert($tournament)
     {
-        if (!$tournament instanceof Team) {
-            throw new \Exception('You can save only team');
+        if (!$tournament instanceof Tournament) {
+            throw new \Exception('You can save only users');
         }
-        $request = "(name) VALUES ('" . $tournament->getName() . "')";
+        $request = "(id) VALUES ('" . $tournament->getId()."')";
         return parent::insert($request);
     }
 
-
-    public function delete($tournament)
+    /**
+     * Update user
+     *
+     * @param User $user
+     * @throws \Exception
+     */
+    public function update($user)
     {
-        if (!$tournament instanceof Team) {
-            throw new \Exception('You can save only teams');
+        if (!$user instanceof Player) {
+            throw new \Exception('You can save only users');
         }
-        $request = "WHERE id = " . $tournament->getId();
+        $request = "SET firstname = '" . $user->getFirstName() . "', lastname = '" . $user->getLastName() . "' WHERE id = " . $user->getId() . " ";
+        parent::update($request);
+    }
+
+    /**
+     * Delete user
+     *
+     * @param User $user
+     * @throws \Exception
+     */
+    public function delete($user)
+    {
+        if (!$user instanceof Player) {
+            throw new \Exception('You can save only users');
+        }
+        $request = "WHERE id = " . $user->getId();
         parent::delete($request);
     }
 }
