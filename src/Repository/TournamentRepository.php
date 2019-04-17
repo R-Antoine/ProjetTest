@@ -1,12 +1,5 @@
 <?php
-/* Created by PhpStorm.
- * User: HB
- * Date: 17/04/2019
- * Time: 14:16
- */
-
 namespace App\Repository;
-
 
 use App\Model\Tournament;
 
@@ -14,16 +7,20 @@ class TournamentRepository extends Repository implements IRepository
 {
     private static $table = 'tournament';
 
+<<<<<<< HEAD
     /* 
     TournamentRepository constructor.
      */
+=======
+
+>>>>>>> dce823ba614cb365f78e7a9fa15222d8e3ccc930
     public function __construct()
     {
         parent::__construct(TournamentRepository::$table);
     }
 
 
-    public function getResult(string $request = ''): ?Tournament
+    public function getResult(string $request = ''): Tournament
     {
         $tournament = null;
         $result = parent::getResult($request);
