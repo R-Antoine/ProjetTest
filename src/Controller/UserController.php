@@ -51,10 +51,9 @@ class UserController
                 $user->setTeam($playerTeam);
                 $user->setFisrtname($_POST['firstname'])
                     ->setLastname($_POST['lastname']);
-                if(count($playerTeam->getPlayers())<5) {
+                if(count($playerTeam->getPlayers())<4) {
                     $this->userRepository->insert($user);
-                    var_dump($playerTeam->getPlayers());
-                   // header('Location: /team/index');
+                    header('Location: /team/index');
                     exit;
                 }else{
                     $errors[] = 'ERREUR: Equipe pleine';
