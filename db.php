@@ -19,53 +19,37 @@ $db = new mysqli(
 );
 
 $db->query(
-    'CREATE TABLE IF NOT EXISTS team('+
-    'id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,'+
-    'name VARCHAR(32) NOT NULL'+
-    ');'
+    'CREATE TABLE IF NOT EXISTS team(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,name VARCHAR(32) NOT NULL);'
 );
 $db->query(
-    'CREATE TABLE IF NOT EXISTS player('+
-    'id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,'+
-    'name VARCHAR(32) NOT NULL,'+
-    'teamId INT NOT NULL,'+
-    'FOREIGN KEY (teamId) REFERENCES team(id)'+
-    ');'
+    'CREATE TABLE IF NOT EXISTS player(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,name VARCHAR(32) NOT NULL,teamId INT NOT NULL,FOREIGN KEY (teamId) REFERENCES team(id));'
 );
 $db->query(
-    'CREATE TABLE IF NOT EXISTS tournament('+
-    'id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,'+
-    'name VARCHAR(32) NOT NULL'+
-    ');'
+    'CREATE TABLE IF NOT EXISTS tournament(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,name VARCHAR(32) NOT NULL);'
+);
+$db->query(
+    'CREATE TABLE IF NOT EXISTS participation(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,teamId INT NOT NULL,tournamentId INT NOT NULL,FOREIGN KEY (teamId) REFERENCES team(id),FOREIGN KEY (tournamentId) REFERENCES tournament(id));'
 );
 
-$db->query('CREATE TABLE IF NOT EXISTS player(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, firstname VARCHAR(255), lastname VARCHAR(255)) ');
-$db->query('CREATE TABLE IF NOT EXISTS team(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, name VARCHAR(255))');
+//if (!$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
 
+$db->query('INSERT INTO player(name, teamId) VALUES ("Jean", 0);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Robert", 0);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Rouquin", 1);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Guillaume", 1);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Antoine", 2);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Julian", 2);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Paul", 3);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Carine", 3);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Rui", 4);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Anïs", 4);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Pierre-alain", 5);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Amandine", 5);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Alexandra", 6);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Hinerava", 6);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Jhonny", 7);');
+$db->query('INSERT INTO player(name, teamId) VALUES ("Koba LaD", 7);');
 
-if (!$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jawad','cafe')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")
-    || !$db->query("INSERT INTO player(firstname,lastname) VALUES('Jean','Robert')")) {
-    echo "erreur";
-} else {
-    echo "super";
-}
 $db->close();
 
 
