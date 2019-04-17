@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<h1 class="text-center">Tournoi de pétanque</h1>
+<h1 class="text-center">Liste</h1>
 <div class="container">
     <div class="row">
         <div class="col text-center">
