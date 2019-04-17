@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 
+use App\Model\Player;
+use App\Model\Team;
 
 class UserRepository extends Repository implements IRepository
 {
@@ -29,9 +31,9 @@ class UserRepository extends Repository implements IRepository
         $result = parent::getResult($request);
 
         if ($result) {
-            $user = new User();
-            $user->setFirstName($result['firstname'])
-                ->setLastName($result['lastname']);
+            $user = new Player();
+            $user->setFisrtname($result['firstname'])
+                ->setLastname($result['lastname']);
         }
         return $user;
     }
@@ -50,9 +52,9 @@ class UserRepository extends Repository implements IRepository
 
         if ($results) {
             foreach ($results as $result) {
-                $user = new User();
-                $user->setFirstName($result['firstname'])
-                    ->setLastName($result['lastname']);
+                $user = new Player();
+                $user->setFisrtname($result['firstname'])
+                    ->setLastname($result['lastname']);
                 $users[] = $user;
             }
         }
@@ -64,15 +66,16 @@ class UserRepository extends Repository implements IRepository
      * Insert user
      *
      * @param User $user
+     * @param Team $team
      * @return mixed
      * @throws \Exception
      */
     public function insert($user)
     {
-        if (!$user instanceof User) {
+        if (!$user instanceof Player) {
             throw new \Exception('You can save only users');
         }
-        $request = "(firstname, lastname) VALUES ('" . $user->getFirstName() . "','" . $user->getLastName() . "')";
+        $request = "(firstname, lastname,team_id) VALUES ('" . $user->getFisrtname() . "','" . $user->getLastname() . "','" . $user->getTeam()->getId() . "')";
         return parent::insert($request);
     }
 
@@ -84,7 +87,7 @@ class UserRepository extends Repository implements IRepository
      */
     public function update($user)
     {
-        if (!$user instanceof User) {
+        if (!$user instanceof Player) {
             throw new \Exception('You can save only users');
         }
         $request = "SET firstname = '" . $user->getFirstName() . "', lastname = '" . $user->getLastName() . "' WHERE id = " . $user->getId() . " ";
@@ -99,7 +102,7 @@ class UserRepository extends Repository implements IRepository
      */
     public function delete($user)
     {
-        if (!$user instanceof User) {
+        if (!$user instanceof Player) {
             throw new \Exception('You can save only users');
         }
         $request = "WHERE id = " . $user->getId();

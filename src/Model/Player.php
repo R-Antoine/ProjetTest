@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Model;
 class Player
 {
     /** @var int $id */
@@ -12,8 +13,27 @@ class Player
     private $age;
     /** @var DateTime $createdAt */
     private $createdAt;
+    /**
+     * @var Team $team
+     */
+    private $team;
 
 
+    /**
+     * @return Team
+     */
+    public function getTeam(): Team
+    {
+        return $this->team;
+    }
+
+    /**
+     * @param Team $team
+     */
+    public function setTeam(Team $team): void
+    {
+        $this->team = $team;
+    }
     /**
      * Get the value of fisrtname
      */

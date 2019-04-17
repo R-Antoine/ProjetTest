@@ -29,6 +29,7 @@ class TeamRepository extends Repository implements IRepository
 
         if ($result) {
             $team = new Team();
+            $team->setId($result['id']);
             $team->setName($result['name']);
         }
 
@@ -44,6 +45,7 @@ class TeamRepository extends Repository implements IRepository
         if ($results) {
             foreach ($results as $result) {
                 $team = new Team();
+                $team->setId($result['id']);
                 $team->setName($result['name']);
                 $teams[] = $team;
             }

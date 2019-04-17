@@ -27,7 +27,8 @@ $db->query(
 $db->query(
     'CREATE TABLE IF NOT EXISTS player('.
     'id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,'.
-    'name VARCHAR(32) NOT NULL,'.
+    'firstname VARCHAR(32) NOT NULL,'.
+    'lastname VARCHAR(32) NOT NULL,'.
     'team_id INT NOT NULL,'.
     'FOREIGN KEY (team_id) REFERENCES team(id)'.
     ');'
@@ -53,13 +54,7 @@ $db->query(
     '("Les patates"), ("Jai faim"), ("Les Dozo"), ("S-Crew"),'.
     '("1995"), ("Universal France"), ("Neocrome"), ("ISSOU");'
 );
-$db->query(
-    'INSERT INTO player(name, team_id) VALUES '.
-    '("Jean", 1), ("Robert", 1), ("Rouquin", 2), ("Guillaume", 2),'.
-    '("Antoine", 3), ("Julian", 3), ("Paul", 4), ("Carine", 4),'.
-    '("Rui", 5), ("Anïs", 5), ("Pierre-alain", 6), ("Amandine", 6),'.
-    '("Alexandra", 7), ("Hinerava", 7), ("Jhonny", 8), ("Koba LaD", 8);'
-);
+
 echo $db->error;
 $db->close();
 
@@ -67,4 +62,3 @@ $db->close();
 if ($db->connect_errno) {
     throw new Exception($db->connect_error);
 }
-

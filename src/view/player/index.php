@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col text-center">
-           <a href="/player/create">Ajouter des joueurs</a>
+           <a href="/user/create">Ajouter des joueurs</a>
         </div>
     </div>
 </div>
