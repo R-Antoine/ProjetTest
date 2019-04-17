@@ -1,6 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
+/* Created by PhpStorm.
  * User: HB
  * Date: 17/04/2019
  * Time: 14:16
@@ -15,12 +14,11 @@ class TournamentRepository extends Repository implements IRepository
 {
     private static $table = 'tournament';
 
-    /**
-     * TournamentRepository constructor.
+    /* TournamentRepository constructor.
      */
-    public function __construct()
+    public function construct()
     {
-        parent::__construct(TournamentRepository::$table);
+        parent::construct(TournamentRepository::$table);
     }
 
 
