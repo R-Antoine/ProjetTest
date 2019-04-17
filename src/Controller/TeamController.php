@@ -11,10 +11,12 @@ namespace App\Controller;
 
 use App\Model\Team;
 use App\Repository\TeamRepository;
+use App\Repository\UserRepository;
 
 class TeamController
 {
     private $teamRepository;
+    private $userRepository;
 
     /**
      * TeamController constructor.
@@ -23,12 +25,20 @@ class TeamController
     public function __construct()
     {
         $this->teamRepository = new TeamRepository();
+        $this->userRepository = new UserRepository();
     }
 
 
     public function index()
     {
+        /** @var Team[] $teams */
         $teams = $this->teamRepository->getResults();
+
+        foreach ($teams as $team) {
+            $users = $this->userRepository->getResults('where team_id=' . $team->getId());
+            $team->setPlayers($users);
+        }
+
         require_once 'src/View/team/index.php';
     }
 
@@ -42,6 +52,7 @@ class TeamController
                 $this->teamRepository->insert($team);
                 header('Location: /user/create');
                 exit;
+
             } else {
                 $errors[] = 'Missing fields';
             }
