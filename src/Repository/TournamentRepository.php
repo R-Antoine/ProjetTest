@@ -14,11 +14,12 @@ class TournamentRepository extends Repository implements IRepository
 {
     private static $table = 'tournament';
 
-    /* TournamentRepository constructor.
+    /* 
+    TournamentRepository constructor.
      */
-    public function construct()
+    public function __construct()
     {
-        parent::construct(TournamentRepository::$table);
+        parent::__construct(TournamentRepository::$table);
     }
 
 
